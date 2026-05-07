@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - SmartStudy AI</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+
+        body{
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #020617;
+            color: white;
+        }
+
+        /* Sidebar */
+
+        .sidebar{
+            width: 260px;
+            height: 100vh;
+            background: rgba(255,255,255,0.05);
+            position: fixed;
+            padding: 30px 20px;
+            backdrop-filter: blur(10px);
+            border-right: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .logo{
+            font-size: 30px;
+            font-weight: bold;
+            margin-bottom: 50px;
+            color: #60a5fa;
+        }
+
+        .sidebar a{
+            display: block;
+            color: white;
+            text-decoration: none;
+            margin: 18px 0;
+            padding: 12px;
+            border-radius: 12px;
+            transition: 0.3s;
+            font-size: 18px;
+        }
+
+        .sidebar a:hover{
+            background: rgba(37,99,235,0.2);
+            transform: translateX(5px);
+        }
+
+        /* Main Content */
+
+        .main{
+            margin-left: 280px;
+            padding: 40px;
+        }
+
+        .top-bar{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .welcome h1{
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .welcome p{
+            color: #94a3b8;
+        }
+
+        .profile{
+            background: rgba(255,255,255,0.05);
+            padding: 15px 25px;
+            border-radius: 15px;
+        }
+
+        /* Cards */
+
+        .cards{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .card-box{
+            background: rgba(255,255,255,0.05);
+            padding: 30px;
+            border-radius: 20px;
+            transition: 0.3s;
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .card-box:hover{
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.08);
+        }
+
+        .card-box h2{
+            font-size: 35px;
+            margin-bottom: 10px;
+            color: #60a5fa;
+        }
+
+        /* Features */
+
+        .features{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .feature-box{
+            background: rgba(255,255,255,0.05);
+            padding: 30px;
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+
+        .feature-box:hover{
+            transform: scale(1.03);
+            background: rgba(255,255,255,0.08);
+        }
+
+        .feature-box h3{
+            margin-bottom: 15px;
+            color: #60a5fa;
+        }
+
+        .feature-box p{
+            color: #cbd5e1;
+        }
+
+        .feature-box a{
+            display: inline-block;
+            margin-top: 15px;
+            text-decoration: none;
+            color: white;
+            background: #2563eb;
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar -->
+
+    <div class="sidebar">
+
+        <div class="logo">
+            SmartStudy AI 🚀
+        </div>
+        <a href="/profile">👤 Profile</a>
+
+        <a href="/dashboard">🏠 Dashboard</a>
+        <a href="/chatbot">🤖 AI Chatbot</a>
+        <a href="/voice">🎤 Voice Assistant</a>
+        <a href="/notes">📝 Notes Generator</a>
+        <a href="/quiz">📚 Quiz System</a>
+        <a href="/progress">📈 Progress Tracker</a>
+
+    </div>
+
+    <!-- Main Content -->
+
+    <div class="main">
+
+        <!-- Top Bar -->
+
+        <div class="top-bar">
+
+            <div class="welcome">
+
+                <h1>Welcome Back 👋</h1>
+
+                <p>
+                    Your intelligent AI learning platform
+                </p>
+
+            </div>
+
+            <div class="profile">
+                👩‍🎓 Student Panel
+            </div>
+
+        </div>
+
+        <!-- Statistics Cards -->
+
+        <div class="cards">
+
+            <div class="card-box">
+
+                <h2>5+</h2>
+
+                <p>AI Modules</p>
+
+            </div>
+
+            <div class="card-box">
+
+                <h2>100+</h2>
+
+                <p>Quiz Questions</p>
+
+            </div>
+
+            <div class="card-box">
+
+                <h2>24/7</h2>
+
+                <p>AI Assistance</p>
+
+            </div>
+
+            <div class="card-box">
+
+                <h2>Cloud</h2>
+
+                <p>Firebase Database</p>
+
+            </div>
+
+        </div>
+
+        <!-- Feature Modules -->
+
+        <div class="features">
+
+            <div class="feature-box">
+
+                <h3>🤖 AI Chatbot</h3>
+
+                <p>
+                    Ask educational questions and receive smart AI responses.
+                </p>
+
+                <a href="/chatbot">
+                    Open
+                </a>
+
+            </div>
+
+            <div class="feature-box">
+
+                <h3>🎤 Voice Assistant</h3>
+
+                <p>
+                    Speak directly with your SmartStudy AI assistant.
+                </p>
+
+                <a href="/voice">
+                    Open
+                </a>
+
+            </div>
+
+            <div class="feature-box">
+
+                <h3>📝 Notes Generator</h3>
+
+                <p>
+                    Generate study notes instantly for multiple subjects.
+                </p>
+
+                <a href="/notes">
+                    Open
+                </a>
+
+            </div>
+
+            <div class="feature-box">
+
+                <h3>📚 Quiz System</h3>
+
+                <p>
+                    Practice topic-based quizzes and improve your skills.
+                </p>
+
+                <a href="/quiz">
+                    Open
+                </a>
+
+            </div>
+
+            <div class="feature-box">
+
+                <h3>📈 Progress Tracker</h3>
+
+                <p>
+                    Monitor your learning performance and quiz history.
+                </p>
+
+                <a href="/progress">
+                    Open
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

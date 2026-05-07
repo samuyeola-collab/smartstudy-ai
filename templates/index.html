@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartStudy AI</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+
+        body{
+            background: linear-gradient(to right, #020617, #0f172a);
+            color: white;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Navbar */
+
+        .navbar{
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+            padding: 15px 30px;
+        }
+
+        .navbar-brand{
+            font-size: 30px;
+            font-weight: bold;
+            color: white !important;
+        }
+
+        .nav-link{
+            color: white !important;
+            margin-left: 20px;
+            transition: 0.3s;
+        }
+
+        .nav-link:hover{
+            color: #60a5fa !important;
+        }
+
+        /* Hero Section */
+
+        .hero{
+            height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .hero h1{
+            font-size: 85px;
+            font-weight: bold;
+            animation: glow 2s infinite alternate;
+        }
+
+        @keyframes glow{
+
+            from{
+                text-shadow: 0 0 10px #2563eb;
+            }
+
+            to{
+                text-shadow: 0 0 30px #60a5fa;
+            }
+
+        }
+
+        .hero p{
+            font-size: 26px;
+            color: #cbd5e1;
+            margin-top: 20px;
+            margin-bottom: 35px;
+        }
+
+        .btn-custom{
+            background: #2563eb;
+            color: white;
+            padding: 15px 40px;
+            border-radius: 14px;
+            font-size: 20px;
+            border: none;
+            transition: 0.3s;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .btn-custom:hover{
+            background: #1d4ed8;
+            transform: scale(1.05);
+            color: white;
+        }
+
+        /* Features */
+
+        .features{
+            padding: 80px 20px;
+        }
+
+        .section-title{
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2{
+            font-size: 50px;
+            font-weight: bold;
+        }
+
+        .section-title p{
+            color: #94a3b8;
+            font-size: 20px;
+        }
+
+        .feature-card{
+            background: rgba(255,255,255,0.05);
+            border-radius: 25px;
+            padding: 35px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            transition: 0.3s;
+            height: 100%;
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .feature-card:hover{
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 0 25px rgba(37,99,235,0.4);
+        }
+
+        .feature-card h1{
+            font-size: 65px;
+        }
+
+        .feature-card h3{
+            margin-top: 20px;
+            margin-bottom: 15px;
+            color: #60a5fa;
+        }
+
+        .feature-card p{
+            color: #cbd5e1;
+            font-size: 17px;
+        }
+
+        /* About Section */
+
+        .about{
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .about h2{
+            font-size: 50px;
+            margin-bottom: 25px;
+        }
+
+        .about p{
+            max-width: 900px;
+            margin: auto;
+            color: #cbd5e1;
+            font-size: 22px;
+            line-height: 1.8;
+        }
+
+        /* Footer */
+
+        footer{
+            margin-top: 80px;
+            padding: 30px;
+            text-align: center;
+            background: rgba(255,255,255,0.03);
+            color: #94a3b8;
+        }
+
+        /* Responsive */
+
+        @media(max-width:768px){
+
+            .hero h1{
+                font-size: 50px;
+            }
+
+            .hero p{
+                font-size: 20px;
+            }
+
+            .section-title h2{
+                font-size: 36px;
+            }
+
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark">
+
+        <div class="container-fluid">
+
+            <a class="navbar-brand" href="#">
+                SmartStudy AI 🚀
+            </a>
+
+            <div class="ms-auto">
+
+                <a class="nav-link d-inline" href="#">
+                    Home
+                </a>
+
+                <a class="nav-link d-inline" href="#features">
+                    Features
+                </a>
+
+                <a class="nav-link d-inline" href="#about">
+                    About
+                </a>
+
+                <a class="nav-link d-inline" href="/login">
+                    Login
+                </a>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <!-- Hero Section -->
+
+    <section class="hero">
+
+        <h1>SmartStudy AI 🚀</h1>
+
+        <p>
+            Your Intelligent AI Learning Assistant
+        </p>
+
+        <a href="/login" class="btn-custom">
+            Get Started
+        </a>
+
+    </section>
+
+    <!-- Features -->
+
+    <section class="features container" id="features">
+
+        <div class="section-title">
+
+            <h2>Powerful AI Features</h2>
+
+            <p>
+                Smart tools designed for modern students
+            </p>
+
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-md-4">
+
+                <div class="feature-card">
+
+                    <h1>🤖</h1>
+
+                    <h3>AI Chatbot</h3>
+
+                    <p>
+                        Ask study questions and get intelligent answers instantly.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="feature-card">
+
+                    <h1>🎤</h1>
+
+                    <h3>Voice Assistant</h3>
+
+                    <p>
+                        Speak directly with your AI learning assistant.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="feature-card">
+
+                    <h1>🧠</h1>
+
+                    <h3>Personalized Learning</h3>
+
+                    <p>
+                        Get recommendations based on your learning progress.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="feature-card">
+
+                    <h1>📚</h1>
+
+                    <h3>Quiz System</h3>
+
+                    <p>
+                        Generate quizzes and test your knowledge instantly.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="feature-card">
+
+                    <h1>📈</h1>
+
+                    <h3>Progress Tracker</h3>
+
+                    <p>
+                        Track your quiz performance and learning journey.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="feature-card">
+
+                    <h1>☁️</h1>
+
+                    <h3>Cloud Database</h3>
+
+                    <p>
+                        Secure Firebase cloud database integration system.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- About Section -->
+
+    <section class="about" id="about">
+
+        <h2>About SmartStudy AI</h2>
+
+        <p>
+
+            SmartStudy AI is an advanced AI-powered educational platform
+            designed to help students learn smarter. It combines artificial
+            intelligence, quizzes, notes generation, voice assistance,
+            analytics, and cloud technology into one powerful learning system.
+
+        </p>
+
+    </section>
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+            © 2026 SmartStudy AI | Built by Samiksha Yeola 🚀
+        </p>
+
+    </footer>
+
+</body>
+</html>
