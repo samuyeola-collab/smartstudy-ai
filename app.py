@@ -19,14 +19,17 @@ app.config['SESSION_TYPE'] = 'filesystem'
 Session(app)
 
 # Firebase Setup
-#cred = credentials.Certificate(
- #   "smartstudyai-50437-firebase-adminsdk-fbsvc-c92cef1af6.json"
-#)
+# Firebase Setup
+import json
 
-#firebase_admin.initialize_app(cred, {
- #   'databaseURL': 'https://smartstudyai-50437-default-rtdb.firebaseio.com/'
-#})
+firebase_credentials = json.loads(os.environ["FIREBASE_CREDENTIALS"])
 
+if not firebase_admin._apps:
+    cred = credentials.Certificate(firebase_credentials)
+
+    firebase_admin.initialize_app(cred, {
+        "databaseURL": os.environ.get("FIREBASE_DB_URL")
+    })
 # Store Quiz History
 quiz_history = []
 
