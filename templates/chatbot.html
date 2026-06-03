@@ -9,100 +9,230 @@
 
     <style>
 
-        body{
-            background: #020617;
-            color: white;
-            font-family: Arial, sans-serif;
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
         }
 
+        body{
+            background: linear-gradient(to right,#020617,#0f172a);
+            color:white;
+            font-family: Arial, sans-serif;
+            overflow:hidden;
+        }
+
+        /* Sidebar */
+
         .sidebar{
-            width: 250px;
-            height: 100vh;
-            background: rgba(255,255,255,0.05);
-            position: fixed;
-            padding: 30px 20px;
+            width:260px;
+            height:100vh;
+            position:fixed;
+            top:0;
+            left:0;
+            padding:30px 20px;
+            background:rgba(255,255,255,0.05);
+            backdrop-filter:blur(15px);
+            border-right:1px solid rgba(255,255,255,0.08);
         }
 
         .sidebar h2{
-            margin-bottom: 40px;
+            margin-bottom:45px;
+            font-size:28px;
+            background: linear-gradient(to right,#60a5fa,#2563eb);
+            -webkit-background-clip:text;
+            -webkit-text-fill-color:transparent;
         }
 
         .sidebar a{
-            display: block;
-            color: white;
-            text-decoration: none;
-            margin: 20px 0;
-            font-size: 18px;
+            display:block;
+            text-decoration:none;
+            color:white;
+            margin:14px 0;
+            padding:14px 18px;
+            border-radius:14px;
+            transition:0.3s;
+            font-size:17px;
         }
+
+        .sidebar a:hover{
+            background:rgba(37,99,235,0.25);
+            transform:translateX(8px);
+        }
+
+        /* Main Chat */
 
         .chat-container{
-            margin-left: 270px;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
+            margin-left:260px;
+            height:100vh;
+            display:flex;
+            flex-direction:column;
         }
+
+        /* Header */
 
         .chat-header{
-            padding: 20px;
-            font-size: 30px;
-            font-weight: bold;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding:25px 35px;
+            font-size:30px;
+            font-weight:bold;
+            background:rgba(255,255,255,0.04);
+            backdrop-filter:blur(12px);
+            border-bottom:1px solid rgba(255,255,255,0.08);
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
         }
 
+        .chat-header span{
+            color:#60a5fa;
+        }
+
+        /* Chat Area */
+
         .chat-box{
-            flex: 1;
-            padding: 20px;
-            overflow-y: auto;
+            flex:1;
+            padding:30px;
+            overflow-y:auto;
         }
 
         .message{
-            max-width: 70%;
-            padding: 15px;
-            border-radius: 15px;
-            margin-bottom: 20px;
-            font-size: 17px;
+            max-width:75%;
+            padding:18px 22px;
+            margin-bottom:25px;
+            border-radius:22px;
+            line-height:1.6;
+            font-size:17px;
+            animation:fadeIn 0.4s ease;
         }
 
         .user{
-            background: #2563eb;
-            margin-left: auto;
+            margin-left:auto;
+            background:linear-gradient(to right,#2563eb,#1d4ed8);
+            box-shadow:0 0 20px rgba(37,99,235,0.25);
         }
 
         .bot{
-            background: rgba(255,255,255,0.08);
+            background:rgba(255,255,255,0.06);
+            border:1px solid rgba(255,255,255,0.08);
+            backdrop-filter:blur(12px);
         }
 
+        /* Input */
+
         .chat-input{
-            padding: 20px;
-            display: flex;
-            gap: 10px;
-            border-top: 1px solid rgba(255,255,255,0.1);
+            padding:20px;
+            display:flex;
+            gap:15px;
+            background:rgba(255,255,255,0.03);
+            border-top:1px solid rgba(255,255,255,0.08);
         }
 
         .chat-input input{
-            flex: 1;
-            padding: 15px;
-            border-radius: 10px;
-            border: none;
-            background: rgba(255,255,255,0.08);
-            color: white;
-            outline: none;
+            flex:1;
+            padding:18px;
+            border:none;
+            border-radius:16px;
+            outline:none;
+            background:rgba(255,255,255,0.06);
+            color:white;
+            font-size:16px;
+            backdrop-filter:blur(10px);
+        }
+
+        .chat-input input::placeholder{
+            color:#cbd5e1;
         }
 
         .chat-input button{
-            background: #2563eb;
-            border: none;
-            padding: 15px 25px;
-            border-radius: 10px;
-            color: white;
-            transition: 0.3s;
+            border:none;
+            padding:16px 28px;
+            border-radius:16px;
+            background:linear-gradient(to right,#2563eb,#1d4ed8);
+            color:white;
+            font-weight:bold;
+            transition:0.3s;
         }
 
         .chat-input button:hover{
-            background: #1d4ed8;
+            transform:scale(1.05);
+            box-shadow:0 0 20px rgba(37,99,235,0.3);
+        }
+
+        /* Welcome Box */
+
+        .welcome-box{
+            background:rgba(255,255,255,0.05);
+            border:1px solid rgba(255,255,255,0.08);
+            padding:30px;
+            border-radius:25px;
+            margin-bottom:30px;
+            backdrop-filter:blur(15px);
+        }
+
+        .welcome-box h3{
+            color:#60a5fa;
+            margin-bottom:15px;
+        }
+
+        /* Animation */
+
+        @keyframes fadeIn{
+            from{
+                opacity:0;
+                transform:translateY(10px);
+            }
+            to{
+                opacity:1;
+                transform:translateY(0);
+            }
+        }
+
+        /* Scrollbar */
+
+        ::-webkit-scrollbar{
+            width:8px;
+        }
+
+        ::-webkit-scrollbar-thumb{
+            background:#2563eb;
+            border-radius:10px;
+        }
+
+        /* Mobile */
+
+        @media(max-width:900px){
+
+            body{
+                overflow:auto;
+            }
+
+            .sidebar{
+                position:relative;
+                width:100%;
+                height:auto;
+            }
+
+            .chat-container{
+                margin-left:0;
+                height:auto;
+            }
+
+            .chat-header{
+                font-size:24px;
+            }
+
+            .message{
+                max-width:100%;
+            }
+
+            .chat-input{
+                flex-direction:column;
+            }
+
         }
 
     </style>
+
 </head>
 <body>
 
@@ -114,10 +244,10 @@
 
         <a href="/dashboard">🏠 Dashboard</a>
         <a href="/chatbot">🤖 AI Chatbot</a>
-        <a href="#">🎤 Voice Assistant</a>
-        <a href="#">📝 Notes Generator</a>
-        <a href="#">📚 Quiz System</a>
-        <a href="#">📈 Progress Tracker</a>
+        <a href="/voice">🎤 Voice Assistant</a>
+        <a href="/notes">📝 Notes Generator</a>
+        <a href="/quiz">📚 Quiz System</a>
+        <a href="/progress">📈 Progress Tracker</a>
 
     </div>
 
@@ -125,13 +255,33 @@
 
     <div class="chat-container">
 
+        <!-- Header -->
+
         <div class="chat-header">
-            AI Chatbot 🤖
+
+            <div>
+                AI Chatbot <span>🤖</span>
+            </div>
+
+            <div style="font-size:16px;color:#cbd5e1;">
+                Smart AI Assistant
+            </div>
+
         </div>
 
-        <!-- Chat Messages -->
+        <!-- Messages -->
 
         <div class="chat-box">
+
+            <div class="welcome-box">
+
+                <h3>Welcome to SmartStudy AI 🚀</h3>
+
+                <p>
+                    Ask educational questions, coding doubts, technical concepts and get intelligent AI-powered responses instantly.
+                </p>
+
+            </div>
 
             {% if user_message %}
 
@@ -146,27 +296,39 @@
             {% else %}
 
             <div class="message bot">
-                Hello 👋 <br>
-                I am your SmartStudy AI assistant.
+
+                Hello 👋 <br><br>
+
+                I am your SmartStudy AI assistant.<br>
+
+                Ask me anything related to:
+                <br><br>
+
+                📚 Programming<br>
+                🤖 Artificial Intelligence<br>
+                💻 Web Development<br>
+                📖 Study Concepts<br>
+                🎯 Interview Preparation
+
             </div>
 
             {% endif %}
 
         </div>
 
-        <!-- Input Form -->
+        <!-- Input -->
 
         <form method="POST" class="chat-input">
 
             <input
                 type="text"
                 name="message"
-                placeholder="Type your message..."
+                placeholder="Ask SmartStudy AI anything..."
                 required
             >
 
             <button type="submit">
-                Send
+                Send 🚀
             </button>
 
         </form>
