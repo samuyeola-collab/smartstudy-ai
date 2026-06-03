@@ -1,8 +1,9 @@
 Flask==3.0.3
-gunicorn==21.2.0
-firebase-admin==6.5.0
-google-generativeai==0.7.2
-Werkzeug==3.0.3
 Flask-Session==0.8.0
-openai==1.31.0
-reportlab==4.2.2
+firebase-admin==6.5.0
+gunicorn==22.0.0
+reportlab==4.2.0
+google-generativeai==0.7.2
+protobuf==4.25.3
+grpcio==1.64.1
+grpcio-status==1.62.2
